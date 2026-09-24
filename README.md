@@ -6,7 +6,7 @@
 - All Book Now / Book a Session buttons use WhatsApp click-to-chat with:
   `Hi! Lesra Films, I have an inquiry`
 - Rebuilt the contact form to send server-side email instead of opening the visitor's mail app.
-- Contact submissions are sent to `info@lesrafilms.co.zw`.
+- Contact submissions are sent to `info@lesrafilms.com`.
 - A confirmation email is also sent to the client's submitted email address.
 - Email template uses Lesra Films black, white and gold styling and places the Lesra Films logo at the top.
 - Fixed the `node:fs/promises` client-bundle error by moving filesystem album logic into the server-only `app/albums.ts` module.
@@ -21,10 +21,10 @@ Set these in `.env.local` for local development and in Vercel Project Settings >
 ```env
 ZOHO_SMTP_HOST=smtp.zoho.com
 ZOHO_SMTP_PORT=465
-ZOHO_SMTP_USER=info@lesrafilms.co.zw
+ZOHO_SMTP_USER=info@lesrafilms.com
 ZOHO_SMTP_PASS=YOUR_ZOHO_APP_PASSWORD
-ZOHO_SMTP_FROM=info@lesrafilms.co.zw
-ZOHO_SMTP_EHLO=lesrafilms.co.zw
+ZOHO_SMTP_FROM=info@lesrafilms.com
+ZOHO_SMTP_EHLO=lesrafilms.com
 ```
 
 Use the Zoho app-specific password if Zoho requires one for SMTP authentication. Never commit the real password to Git.

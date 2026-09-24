@@ -59,8 +59,8 @@ export default function Contact() {
               <div><strong>Email</strong><span><a href={`mailto:${contact.email}`}>{contact.email}</a></span></div>
             </div>
             <div className="contact-row">
-              <div>▶</div>
-              <div><strong>YouTube</strong><span><a href={contact.youtube} target="_blank" rel="noreferrer">youtube.com/lesrafilms</a></span></div>
+              <div>💬</div>
+              <div><strong>Whatsapp</strong><span><a href={contact.whatsappUrl} target="_blank" rel="noreferrer"> +263 77 340 0195</a></span></div>
             </div>
 
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginTop: 25 }}>

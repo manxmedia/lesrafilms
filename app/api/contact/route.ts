@@ -4,7 +4,7 @@ import { sendEmail } from '@/smtp';
 const escapeHtml = (value: string) =>
   value.replace(/[&<>"']/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;' })[char] || char);
 
-const logoUrl = 'https://lesrafilms.co.zw/brand/lesra-films-logo.png';
+const logoUrl = 'https://lesrafilms.com/brand/lesra-films-logo.png';
 const gold = '#D8B56A';
 
 function emailTemplate({
@@ -38,7 +38,7 @@ function emailTemplate({
         ${message ? `<div style="margin-top:22px;padding:18px;border-left:3px solid ${gold};background:#0d0d0d;color:#fff;line-height:1.7;white-space:normal;">${escapeHtml(message).replace(/\n/g,'<br>')}</div>` : ''}
       </div>
       <div style="padding:18px 30px;background:#000;border-top:1px solid #292929;color:#8e8a82;font-size:12px;text-align:center;">
-        Lesra Films · Waterfalls, Harare, Zimbabwe · info@lesrafilms.co.zw
+        Lesra Films · Waterfalls, Harare, Zimbabwe · info@lesrafilms.com
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     const subject = `Lesra Films enquiry — ${service || 'General enquiry'}`;
 
     await sendEmail({
-      to: 'info@lesrafilms.co.zw',
+      to: 'info@lesrafilms.com',
       replyTo: email,
       subject,
       html: emailTemplate({
@@ -102,7 +102,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Contact email error:', error);
     return NextResponse.json(
-      { error: 'We could not send your enquiry right now. Please try again or contact info@lesrafilms.co.zw directly.' },
+      { error: 'We could not send your enquiry right now. Please try again or contact info@lesrafilms.com directly.' },
       { status: 500 }
     );
   }

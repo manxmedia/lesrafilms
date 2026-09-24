@@ -90,7 +90,7 @@ export async function sendEmail({
 
   try {
     await readResponse(socket);
-    await command(socket, `EHLO ${process.env.ZOHO_SMTP_EHLO || 'lesrafilms.co.zw'}`, /^250[ -]/);
+    await command(socket, `EHLO ${process.env.ZOHO_SMTP_EHLO || 'lesrafilms.com'}`, /^250[ -]/);
 
     // Zoho port 587 starts as plain SMTP and is upgraded to TLS with STARTTLS.
     if (!config.secure && config.port !== 465) {
@@ -106,7 +106,7 @@ export async function sendEmail({
       });
       socket = upgraded;
 
-      await command(socket, `EHLO ${process.env.ZOHO_SMTP_EHLO || 'lesrafilms.co.zw'}`, /^250[ -]/);
+      await command(socket, `EHLO ${process.env.ZOHO_SMTP_EHLO || 'lesrafilms.com'}`, /^250[ -]/);
     }
 
     await command(socket, 'AUTH LOGIN', /^334/);

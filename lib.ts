@@ -12,10 +12,14 @@ export const services = [
 ];
 
 export const contact = {
-  email: 'info@lesrafilms.co.zw',
+  email: 'info@lesrafilms.com',
   phone: '+263 77 340 0195',
   tel: '+263773400195',
   whatsapp: '263773400195',
   whatsappUrl: 'https://wa.me/263773400195?text=Hi%21%20Lesra%20Films%2C%20I%20have%20an%20inquiry',
-  youtube: 'https://youtube.com/lesrafilms/'
+  youtube: 'https://youtube.com/lesrafilms/',
+  facebook: 'https://www.facebook.com/lesrafilms/',
+  instagram: 'https://www.instagram.com/lesra_films/',
+  tiktok: 'https://www.tiktok.com/@lesra_films',
 };
+

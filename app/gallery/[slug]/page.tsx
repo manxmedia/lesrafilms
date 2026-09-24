@@ -1,5 +1,32 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getAlbums } from '@/app/albums';
-export const dynamic='force-dynamic';
-export default async function AlbumPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const albums=await getAlbums();const album=albums.find(a=>a.slug===slug);if(!album) notFound();return <main><section className="page-hero"><div className="container"><Link href="/gallery" className="eyebrow">← Back to gallery</Link><h1>{album.name}</h1><p>{album.images.length} photographs from this Lesra Films project.</p></div></section><section className="section"><div className="container"><div className="grid" style={{gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:18}}>{album.images.map((src,i)=><a key={src} href={src} target="_blank" rel="noreferrer" className="card" style={{display:'block'}}><img src={src} alt={`${album.name} ${i+1}`} style={{width:'100%',height:320,objectFit:'cover',display:'block'}}/></a>)}</div></div></section></main>}
+import GalleryLightbox from '@/components/GalleryLightbox';
+
+export const dynamic = 'force-dynamic';
+
+export default async function AlbumPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const albums = await getAlbums();
+  const album = albums.find((item) => item.slug === slug);
+
+  if (!album) notFound();
+
+  return (
+    <main>
+      <section className="page-hero">
+        <div className="container">
+          <Link href="/gallery" className="eyebrow">← Back to gallery</Link>
+          <h1>{album.name}</h1>
+          <p>{album.images.length} photographs from this Lesra Films project. Click any photograph to open the viewer, then use the arrows to move through the album.</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <GalleryLightbox images={album.images} albumName={album.name} />
+        </div>
+      </section>
+    </main>
+  );
+}
