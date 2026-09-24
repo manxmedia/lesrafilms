@@ -1,0 +1,1 @@
+export default function ServiceCard({title,text,icon}:{title:string;text:string;icon:string}){return <article className="card service"><div className="icon">{icon}</div><h3>{title}</h3><p>{text}</p></article>}

@@ -1,0 +1,1 @@
+Add each photo project as its own folder inside this directory. Put a cover image named cover.jpg (optional) and any .jpg/.jpeg/.png/.webp files inside the folder. No code changes are required; redeploy the site to publish new albums.
