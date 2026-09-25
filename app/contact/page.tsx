@@ -88,9 +88,9 @@ export default function Contact() {
               <div className="field"><label>Preferred date / timing</label><input name="date" placeholder="e.g. 12 December 2026" /></div>
               <div className="field"><label>Project details</label><textarea name="message" required placeholder="Tell us about the project, location, number of people and what you need." /></div>
               <button className="btn" type="submit" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending enquiry…' : 'Send enquiry by email →'}
+                {status === 'sending' ? 'Sending…' : 'Send enquiry →'}
               </button>
-              {status === 'sent' && <div className="success">Thank you. Your enquiry has been sent to Lesra Films and a confirmation has been emailed to you.</div>}
+              {status === 'sent' && <div className="success">Thank you. Your enquiry has been sent. Our team will get back to you as soon as possible. </div>}
               {status === 'error' && <div className="error">{error}</div>}
             </form>
           </div>
