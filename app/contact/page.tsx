@@ -90,7 +90,7 @@ export default function Contact() {
               <button className="btn" type="submit" disabled={status === 'sending'}>
                 {status === 'sending' ? 'Sending…' : 'Send enquiry →'}
               </button>
-              {status === 'sent' && <div className="success">Thank you. Your enquiry has been sent. Our team will get back to you as soon as possible. </div>}
+              {status === 'sent' && <div className="success">Thank you. We have received your enquiry and will be in touch as soon as possible. </div>}
               {status === 'error' && <div className="error">{error}</div>}
             </form>
           </div>
